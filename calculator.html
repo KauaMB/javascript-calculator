@@ -20,7 +20,7 @@
 
   <div class="calculator-container">
 
-
+    
     <div class="calculator-body">
 
       <div class="calculator-display">
@@ -81,42 +81,44 @@
         <button class="calculator-button _0">
           0
         </button>
-
+        
         <button class="calculator-button dot">
           .
         </button>
-
+        
         <button class="calculator-button result">
           =
         </button>
-
+        
         <button class="calculator-button divide">
           /
         </button>
-
+        
         <button class="calculator-button clear">
           Clear
         </button>
       </div>
-
+      
     </div>
-
+    
   </div>
 
 
-
+  
   <script>
     let mathString = '';
-
-    $('.calculator-button').on('click', function () {
+    
+    $('.calculator-button').on('click', function() {
       let mathDisplay = $('.text-display')
       let trimmedButtonText = $(this).text().trim();
 
-      if (mathDisplay.text().trim().length > 18) {
+      if (mathDisplay.text().length > 18) {
         let maxSize = mathDisplay.text().trim().substring(0, 18);
+
         $('.limit-alert').addClass('limit-alert-active')
 
-        mathDisplay.text(maxSize);
+        mathDisplay = maxSize;
+
         setTimeout(() => {
           $('.limit-alert').removeClass('limit-alert-active')
         }, 3000)
