@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/ds-digital" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>Calculator</title>
+</head>
+
+<body>
+
+  <p class="title">CALCULATOR</p>
+
+  <div class="calculator-container">
+
+
+    <div class="calculator-body">
+
+      <div class="calculator-display">
+        <p class="text-display">0</p>
+
+        <p class="limit-alert">You've reached the limit of numbers on the screen</p>
+      </div>
+
+      <div class="calculator-keyboard">
+        <button class="calculator-button _1">
+          1
+        </button>
+
+        <button class="calculator-button _2">
+          2
+        </button>
+
+        <button class="calculator-button _3">
+          3
+        </button>
+
+        <button class="calculator-button plus">
+          +
+        </button>
+
+        <button class="calculator-button _4">
+          4
+        </button>
+
+        <button class="calculator-button _5">
+          5
+        </button>
+
+        <button class="calculator-button _6">
+          6
+        </button>
+
+        <button class="calculator-button minus">
+          -
+        </button>
+
+        <button class="calculator-button _7">
+          7
+        </button>
+
+        <button class="calculator-button _8">
+          8
+        </button>
+
+        <button class="calculator-button _9">
+          9
+        </button>
+
+        <button class="calculator-button multiply">
+          *
+        </button>
+
+        <button class="calculator-button _0">
+          0
+        </button>
+
+        <button class="calculator-button dot">
+          .
+        </button>
+
+        <button class="calculator-button result">
+          =
+        </button>
+
+        <button class="calculator-button divide">
+          /
+        </button>
+
+        <button class="calculator-button clear">
+          Clear
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <script>
+    let mathString = '';
+
+    $('.calculator-button').on('click', function () {
+      let mathDisplay = $('.text-display')
+      let trimmedButtonText = $(this).text().trim();
+
+      if (mathDisplay.text().trim().length > 18) {
+        let maxSize = mathDisplay.text().trim().substring(0, 18);
+        $('.limit-alert').addClass('limit-alert-active')
+
+        mathDisplay.text(maxSize);
+        setTimeout(() => {
+          $('.limit-alert').removeClass('limit-alert-active')
+        }, 3000)
+      }
+
+
+      if ($(this).hasClass('clear')) {
+        mathString = '0'
+        mathDisplay.text(mathString);
+      }
+      else if ($(this).hasClass('result')) {
+        mathDisplay.text(eval(mathString))
+      }
+      else {
+        if (mathDisplay.html() === '0') {
+          mathString = '';
+        }
+
+        mathString += trimmedButtonText;
+        mathDisplay.text(mathString)
+
+        console.log(mathString);
+      }
+
+    })
+  </script>
+
+</body>
+
+</html>

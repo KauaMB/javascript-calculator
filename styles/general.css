@@ -1,0 +1,163 @@
+@keyframes startingText {
+  0% {
+    opacity: 0;
+  }
+
+  1% {
+    opacity: 1;
+  }
+
+  99% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+  
+}
+
+
+
+body {
+  background: linear-gradient(to right, #2c2c2c, #111111, #000);
+
+  font-family: rubik;
+}
+
+.title {
+  color: #fff;
+
+  font-size: 40px;
+  font-weight: bold;
+
+  text-align: center;
+  text-decoration: underline;
+
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.calculator-container {
+  display: grid;
+  place-items: center;
+}
+
+
+.calculator-body {
+  display: grid;
+
+  height: 500px;
+  width: 360px;
+
+  padding: 10px 10px;
+
+  place-items: center;
+
+  grid-template-rows: 2fr 3fr;
+  row-gap: 40px;
+
+  border-radius: 10px;
+  border-width: 7px;
+  border-style: outset;
+  border-color: #292828;
+
+  background-color: #1f1c1c;
+}
+
+.calculator-display {
+  background-color: #343a34;
+  height: 100%;
+  width: 100%;
+
+
+
+  border-radius: 5px;
+  border-style: inset;
+
+  position: relative;
+
+  margin-top: 30px;
+
+  font-family: ds-digital;
+}
+
+.limit-alert {
+  visibility: hidden;
+}
+
+.limit-alert-active {
+  animation-name: startingText;
+  animation-duration: 3s;
+  visibility: visible;
+}
+
+.text-display {
+  position: absolute;
+  right: 0;
+
+  color: #000000;
+  font-size: 38px;
+}
+
+.calculator-keyboard {
+  display: grid;
+  grid-template-columns: 75px 75px 75px 75px;
+  grid-template-rows: 75px 75px 75px 75px;
+
+  column-gap: 7px;
+  row-gap: 7px;
+}
+
+.calculator-button {
+  background-color: #0000002c;
+  color: #fff;
+
+  width: 70px;
+  height: 70px;
+
+  text-align: center;
+
+  font-family: rubik;
+  font-size: 25px;
+  font-weight: bold;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  box-shadow: -2px -2px 3px #000000fb;
+
+  transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+.calculator-button:active {
+  background-color: #0000005b;
+  box-shadow: none;
+}
+
+.clear {
+  border-radius: 7px;
+  width: 100px;
+  height: 50px;
+
+  background-color: #f56e00e1;
+}
+
+.clear:active {
+  background-color: #f56e008c;
+  border-color: #f56e00e1;
+  border-style: inset;
+}
+
+.plus, .minus, .divide, .multiply {
+  background-color: #13725a;
+}
+
+.plus:active, .minus:active, .divide:active, .multiply:active {
+  background-color: #125242;
+  border-color: #2cc29c;
+  border-style: inset;
+
+}
