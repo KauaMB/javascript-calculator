@@ -107,6 +107,8 @@ body {
 
   column-gap: 7px;
   row-gap: 7px;
+
+  position: relative;
 }
 
 .calculator-button {
@@ -159,5 +161,17 @@ body {
   background-color: #125242;
   border-color: #2cc29c;
   border-style: inset;
+
+}
+
+.credits {
+  font-family: rubik, arial;
+  font-size: 20px;
+  
+  color: #fff;
+  
+  position: absolute;
+  bottom: 0;
+  right: 0;
 
 }
