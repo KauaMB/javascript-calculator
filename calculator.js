@@ -10,11 +10,9 @@ $('.calculator-button').on('click', function () {
 
     $('.limit-alert').addClass('limit-alert-active')
 
-    $('.calculator-button').on('click', function () {
-      if ($(this).hasClass('clear')) {
+    $('#clear').on('click', function () {
         maxSize = '';
         mathDisplay.text(maxSize);
-      }
     })
 
     mathDisplay = maxSize;
